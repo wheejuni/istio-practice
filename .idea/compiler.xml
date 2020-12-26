@@ -12,9 +12,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="hello" target="11" />
-      <module name="helloworld" target="11" />
-      <module name="world" target="11" />
+      <module name="hello" target="8" />
+      <module name="helloworld" target="8" />
+      <module name="world" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -62,6 +62,25 @@
                     <finalName>app</finalName>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.0.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:11.0.9.1-jdk</image>
+                    </from>
+                    <to>
+                        <image>wheejuni/webapps:worldapp</image>
+                    </to>
+                    <container>
+                        <environment>
+                            <spring.profiles.active>local</spring.profiles.active>
+                        </environment>
+                    </container>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
