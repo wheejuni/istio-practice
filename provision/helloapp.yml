@@ -13,10 +13,12 @@ spec:
     spec:
       containers:
       - name: helloapp
-        image: localhost:5000/webapps:helloapp
+        image: wheejuni/webapps:helloapp
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
