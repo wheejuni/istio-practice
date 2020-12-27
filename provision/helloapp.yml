@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: helloapp
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: helloapp
@@ -14,6 +15,32 @@ spec:
       containers:
       - name: helloapp
         image: wheejuni/webapps:helloapp
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worldapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: worldapp
+  template:
+    metadata:
+      labels:
+        app: worldapp
+    spec:
+      containers:
+      - name: worldapp
+        image: wheejuni/webapps:worldapp
         resources:
           limits:
             memory: "128Mi"
